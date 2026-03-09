@@ -82,7 +82,7 @@ namespace At.Matus.IO.NmmReader
         {
             if (string.IsNullOrWhiteSpace(line))
                 return;
-            char[] charSeparators = { ' ', '\t' };
+            char[] charSeparators = { ' ' };
             string[] tokens = line.Split(charSeparators, StringSplitOptions.RemoveEmptyEntries);
             try
             {
