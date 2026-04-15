@@ -10,6 +10,23 @@ The system is usually operated by a custom software (nmmcontrol.exe) running in 
 
 The API of this library allows to handle files produced by either mode in a consistent way. 
 
+### Known problems in the input files
+
+All currently tested versions of nmmcontrol.exe cause some peculiar problems.
+
+* Some keywords contain spelling errors.
+
+* Due to bugy cache handling, remnants of old measurements appear in some files.
+
+* Data points can be missing in some profiles.
+
+* Depending on the operating system's localization, dates may be stored with unusual month names. In these cases, this library may generate incorrect time metadata.
+
+* Non-ASCII characters can be misinterpreted.
+
+Some of the identified problems might (unlikely) be fixed in a future version of nmmcontrol.exe. An adjustment to this library would then be necessary.
+
+
 ## Library structure
 
 The library is composed of a lot of classes. Some classes are needed for both modi of operations, others are specific for the surface scan or 3D mode, respectively.
@@ -69,8 +86,16 @@ TBA
 
 ![Topography of corrected data](SiMetrics0343_03_5.png)
 
-## Dependencies
 
-The Heydemann correction is performed with straight forward matrix algebra using [Math.NET numerics](https://numerics.mathdotnet.com)
+### Installation and usage
+If you do not want to build the libraries from the source code you can use the released binaries. Just copy the .dll files to the directory of the calling app.
 
-At.Matus.StatisticPod: https://github.com/matusm/At.Matus.StatisticPod
+
+## Dependencies and Acknowledgments
+
+* [At.Matus.StatisticPod](https://github.com/matusm/At.Matus.StatisticPod)
+* [Math.NET numerics](https://numerics.mathdotnet.com)
+
+---
+
+**Note**: This library is not officially affiliated with or endorsed by SIOS Meßtechnik GmbH.
