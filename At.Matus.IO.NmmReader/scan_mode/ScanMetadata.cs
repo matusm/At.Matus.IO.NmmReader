@@ -78,8 +78,8 @@ namespace At.Matus.IO.NmmReader.scan_mode
                 FillIndexData(obj as NmmIndFileParser);
             if (obj is NmmDescriptionFileParser)
                 FillDescriptionData(obj as NmmDescriptionFileParser);
-            if (obj is NmmInstrumentCharacteristcs)
-                FillInstrumentData(obj as NmmInstrumentCharacteristcs);
+            if (obj is NmmInstrumentCharacteristics)
+                FillInstrumentData(obj as NmmInstrumentCharacteristics);
             if (obj is NmmFileName)
                 FillFileData(obj as NmmFileName);
         }
@@ -143,7 +143,7 @@ namespace At.Matus.IO.NmmReader.scan_mode
             ScanIndex = obj.ScanIndex;
         }
 
-        private void FillInstrumentData(NmmInstrumentCharacteristcs instrument)
+        private void FillInstrumentData(NmmInstrumentCharacteristics instrument)
         {
             InstrumentIdentifier = instrument.InstrumentIdentifier;
             User = instrument.User;

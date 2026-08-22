@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NmmInstrumentCharacteristics>
+	<User>Michael Matus</User>
+	<OrganisationLong>Bundesamt fuer Eich- und Vermessungswesen</OrganisationLong>
+	<Organisation>BEV</Organisation>
+	<InstrumentManufacturer>SIOS</InstrumentManufacturer>
+	<InstrumentModel>NMM-1</InstrumentModel>
+	<InstrumentSerial>PN11100209</InstrumentSerial>
+	<InstrumentVersion>0016</InstrumentVersion>
+	<EnvironmentMode>air</EnvironmentMode>
+</NmmInstrumentCharacteristics>

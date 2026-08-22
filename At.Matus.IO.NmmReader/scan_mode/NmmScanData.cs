@@ -32,7 +32,7 @@ namespace At.Matus.IO.NmmReader.scan_mode
         {
             MetaData = new ScanMetaData();
             MetaData.AddDataFrom(fileNameObject);
-            MetaData.AddDataFrom(new NmmInstrumentCharacteristcs());
+            MetaData.AddDataFrom(new NmmInstrumentCharacteristics());
             // first read the description file so we can check if requested scan index is valid
             MetaData.AddDataFrom(new NmmDescriptionFileParser(fileNameObject));
             // now perform the scan index checks

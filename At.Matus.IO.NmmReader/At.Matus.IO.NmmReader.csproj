@@ -62,7 +62,7 @@
     <Compile Include="NmmEnvironmentData.cs" />
     <Compile Include="NmmFileException.cs" />
     <Compile Include="NmmFileName.cs" />
-    <Compile Include="NmmInstrumentCharacteristcs.cs" />
+    <Compile Include="NmmInstrumentCharacteristics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="scan_mode\NmmDatFileParser.cs" />
     <Compile Include="scan_mode\NmmIndFileParser.cs" />
@@ -75,6 +75,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NmmInstrumentCharacteristics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
