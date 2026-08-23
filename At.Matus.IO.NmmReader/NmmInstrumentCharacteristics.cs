@@ -6,7 +6,7 @@ namespace At.Matus.IO.NmmReader
 {
     public class NmmInstrumentCharacteristics
     {
-        public NmmInstrumentCharacteristics() => SetDefaultCharacteristics();
+        public NmmInstrumentCharacteristics() : this("NmmInstrumentCharacteristics.xml") {}
 
         public NmmInstrumentCharacteristics(string fileName)
         {
@@ -21,10 +21,10 @@ namespace At.Matus.IO.NmmReader
             try
             {
                 XDocument document = XDocument.Load(fileName);
-                XElement root = document.Element("InstrumentSettings");
+                XElement root = document.Element("NmmInstrumentCharacteristics");
                 if (root == null)
                     throw new InvalidDataException(
-                        "The XML file must contain an InstrumentSettings element.");
+                        "The XML file must contain an NmmInstrumentCharacteristics element.");
                 User = GetRequiredValue(root, "User");
                 OrganisationLong = GetRequiredValue(root, "OrganisationLong");
                 Organisation = GetRequiredValue(root, "Organisation");
@@ -42,14 +42,14 @@ namespace At.Matus.IO.NmmReader
             }
         }
 
-        public string User { get; private set; }
-        public string OrganisationLong { get; private set; }
-        public string Organisation { get; private set; }
-        public string InstrumentManufacturer { get; private set; }
-        public string InstrumentModel { get; private set; }
-        public string InstrumentSerial { get; private set; }
-        public string InstrumentVersion { get; private set; }
-        public string EnvironmentMode { get; private set; }
+        public string User { get; }
+        public string OrganisationLong { get; }
+        public string Organisation { get; }
+        public string InstrumentManufacturer { get; }
+        public string InstrumentModel { get; }
+        public string InstrumentSerial { get; }
+        public string InstrumentVersion { get; }
+        public string EnvironmentMode { get; }
         public string InstrumentIdentifier => $"{InstrumentManufacturer} {InstrumentModel} {InstrumentVersion} {InstrumentSerial}";
         public string Institute => $"{OrganisationLong} ({Organisation})";
 
@@ -59,21 +59,10 @@ namespace At.Matus.IO.NmmReader
             if (element == null ||
                 string.IsNullOrWhiteSpace(element.Value))
             {
+                return "-unknown-";
                 throw new InvalidDataException($"The required XML element '{elementName}' is missing or empty.");
             }
             return element.Value.Trim();
-        }
-
-        private void SetDefaultCharacteristics()
-        {
-            User = "Michael Matus";
-            OrganisationLong = "Bundesamt fuer Eich- und Vermessungswesen";
-            Organisation = "BEV";
-            InstrumentManufacturer = "SIOS";
-            InstrumentModel = "NMM-1";
-            InstrumentSerial = "PN11100209";
-            InstrumentVersion = "0016";
-            EnvironmentMode = "air";
         }
     }
 }
