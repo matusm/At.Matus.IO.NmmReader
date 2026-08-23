@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22072207.svg)](https://doi.org/10.5281/zenodo.22072207))
+
 # NmmReader (At.Matus.IO.NmmReader)
 
 C# library for reading files produced by the Nanopositioning and Nanomeasuring Machine (NMM)
